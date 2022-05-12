@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h1>{% block title %} Gefeliciteerd {{highscores[0]['name']}} met je hoge score! {% endblock %}</h1>
+    {% for highscore in highscores %}
+        {% if highscore['id'] == highscores[0]['id'] %}
+        <div class='winner'>
+            <h2>{{ highscore['name'] }}</h2>
+            <p>{{ highscore['score'] }}</p>
+        </div>
+        {% else %}
+        <div class='post'>
+            <h2>{{ highscore['name'] }}</h2>
+            <p>{{ highscore['score'] }}</p>
+        </div>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

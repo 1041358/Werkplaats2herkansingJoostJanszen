@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Voeg een nieuwe score toe {% endblock %}</h1>
+    <form method="post">
+        <label for="title">Naam</label>
+        <br>
+        <input type="text" name="title"
+               placeholder="Naam"
+               value="{{ request.form['title'] }}"></input>
+        <br>
+
+        <label for="content">Score</label>
+        <br>
+        <input type ="number" name="content"
+                  placeholder="Score"
+                  >{{ request.form['content'] }}</input>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}
